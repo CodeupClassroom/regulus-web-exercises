@@ -12,4 +12,11 @@
         console.log("What about me?");
     }
 
+    var hadBreakfast = Boolean(Math.round(Math.random()));
+
+    var hadBreakfastMessage = (hadBreakfast) ? "Boy howdy, that was a good breakfast." : "My tummy is a-rumblin',";
+
+    console.log(hadBreakfast);
+    console.log(hadBreakfastMessage);
+
 })();
