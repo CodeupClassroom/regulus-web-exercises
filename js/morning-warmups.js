@@ -44,4 +44,14 @@
         }
     }
 
+    /**
+     * secondToLast
+     */
+
+    function secondToLast(arr) {
+        return arr[arr.length - 2];
+    }
+
+    console.log(secondToLast(["First", "Second", "Not Last", "Last"]));
+
 })();
