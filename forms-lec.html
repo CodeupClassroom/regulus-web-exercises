@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Comes In Many Forms</title>
+</head>
+<body>
+  <h1>Forms Lecture</h1>
+  <form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="user" type="text" placeholder="input username here">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="pass" type="password">
+    <br>
+
+    <label for="bio">Tell Me About Yourself</label>
+    <br>
+    <textarea name="bio" id="bio" cols="35" rows="12">My life is wrought with strife and virtue.</textarea>
+    <br>
+    <input type="checkbox" name="emailSignup"> Would you care to subscribe to our newsletter?
+    <br>
+    <hr>
+    <h3>Check all that are true:</h3>
+    <label for="quiz-1">Pluto is a dwarf planet</label><input type="checkbox" name="quiz" id="quiz-1" value="A"><br>
+    <label for="quiz-2">Pluto is Mickey's pet dog</label><input type="checkbox" name="quiz" id="quiz-2" value="B"><br>
+    <label for="quiz-3">Pluto is one of the Sailor Scouts on Sailor Moon</label><input type="checkbox" name="quiz" id="quiz-3"  value="C"><br>
+    <label for="quiz-4">Pluto is larger than the Sun</label><input type="checkbox" name="quiz" id="quiz-4" value="D">
+    <br>
+    <hr>
+    <h3>"Radio Gaga" is a song by the band _____</h3>
+    <input type="radio" name="radioQuestion" id="rq-1" value="hall and oates"><label for="rq-1">Hall & Oates</label><br>
+    <input type="radio" name="radioQuestion" id="rq-2" value="queen"><label for="rq-2">Queen</label><br>
+    <input type="radio" name="radioQuestion" id="rq-3" value="red velvet"><label for="rq-3">Red Velvet</label><br>
+    <input type="radio" name="radioQuestion" id="rq-4" value="lady gaga"><label for="rq-4">Lady Gaga</label><br>
+    <hr>
+    <label for="select">What's your favorite video game console?</label>
+    <select name="vg-console" id="select">
+      <option value="5200">Atari 5200</option>
+      <option value="amico">ColecoVision Amico</option>
+      <option value="3do">3-DO</option>
+      <option value="vectrex">Vectrex</option>
+      <option value="jaguar">Atari Jaguar</option>
+      <option value="playstation" selected>Sony PlayStation</option>
+    </select>
+    <br>
+    <input type="hidden" name="secret-user-id" value="13">
+    <br>
+    <label for="gender">Are you a boy or girl?</label><input type="text" disabled id="gender" name="gender" value="male">
+    <br>
+    <br>
+    <br>
+    <button type="submit">Send Off Your Information, My Funky Guy/Gal/Non-binary Pal</button>
+  </form>
+</body>
+</html>
