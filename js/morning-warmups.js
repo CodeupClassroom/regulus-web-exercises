@@ -71,5 +71,16 @@
     console.log(moveToEnd(['roll', 'rock', 'and']));
 
 
+    var gyarados = {
+        name: 'Gyarados',
+        description: 'It has an extremely aggressive nature. The Hyper Beam it shoots from its mouth totally incinerates all targets.',
+        height: {
+            feet: 21,
+            inches: 4
+        },
+        type: ['water', 'flying']
+    };
+
+
 
 })();
