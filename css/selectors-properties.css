@@ -1,0 +1,101 @@
+/* Selectors */
+/* HTML Element Selector */
+h1 {
+    color: #FFF;
+}
+
+/* Class Selector*/
+
+.orange-bg {
+    background-color: orange;
+}
+
+/* ID Selector */
+
+#blue-bg {
+    background-color: blue;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/* Descendant Selector */
+
+.orange-bg li {
+    font-family: Helvetica, sans-serif;
+}
+
+main th {
+    color: darkblue;
+}
+
+.table-info>td {
+    text-decoration: underline;
+}
+
+/* Direct Child Selector (uses the > symbol) */
+
+.container>h1 {
+    color: goldenrod;
+}
+
+/*.container>.card {*/
+/*    background-color: rebeccapurple;*/
+/*}*/
+
+/* Combination Selector */
+
+ul.orange-bg {
+    font-size: 24px;
+}
+
+a:link {
+    color: hotpink;
+}
+
+a:visited {
+    color: limegreen;
+}
+
+a:hover {
+    color: firebrick;
+}
+
+a:active {
+    color: royalblue
+}
+
+.description {
+    text-decoration: underline wavy blue;
+    text-align: left;
+    text-indent: 3em;
+}
+
+.pokemon-name {
+    font-family: "Comic Sans MS", sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 3em;
+}
+
+body {
+    background-color: yellow;
+    background-image: url("../img/pokeball.png");
+    background-repeat: repeat-y;
+    background-position-x: center;
+}
+
+.type-list {
+    list-style: inside;
+}
+
+p {
+    color: green
+}
+
+.card .description {
+    color: inherit;
+}
+
+
