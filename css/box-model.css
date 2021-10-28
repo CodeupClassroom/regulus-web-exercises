@@ -1,0 +1,123 @@
+/*
+KEEP IN MIND: Making several CSS Selectors (like ids) with the same values is ill-advised.
+You should probably make classes - this is just for demonstration!
+*/
+
+#content-area-1 {
+    height: 50px;
+    width: 50px;
+    background-color: darkcyan;
+
+    /*For the other box model layers around the content,
+    you can designate each side's size individually:*/
+    /*padding: 10px;*/
+
+    /*Top-Bottom , Left-Right*/
+    /*padding: !*top-bottom*! 10px !*left-right*! 20px;*/
+
+    /*or, all at once!*/
+    padding: 30px;
+}
+
+#content-area-2 {
+    height: 100px;
+    width: 100px;
+    background-color: coral;
+}
+
+.its-just-semantics {
+    height: 200px;
+    width: 300px;
+    background-color: darkcyan;
+}
+
+/*
+
+
+***** JUST OUTSIDE THE CONTENT AREA - Padding *****
+
+MINI EXERCISE: PB&J, Part Deux!
+Let's make our recipe easier to read!
+
+>>> Using padding within your previously defined CSS class, give your elements padding
+>>> What looks best, and why?
+
+
+
+
+***** OUTSIDE OF PADDING - Border *****
+To really draw eyes to the glory of our recipe, let's add borders!
+
+>>> Apply a ~tasteful~ border style to the CSS class you've been using for the instructions
+>>> Be sure the border has color and width in a way which lets it stand out
+>>> Play around with the border-radius CSS property! Link 👀--> https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+
+
+
+
+***** OUTERMOST LAYER - Margin *****
+Margin is the final determining box model layer which can help us space elements apart from each other
+
+>>> As you can guess, apply a ~tasteful~ amount of margin around each element!
+>>> Try using the individual, top-bottom/left-right, and all-in-one way of applying the margin
+>>> When all elements have 10px applied to their top and bottom margins,
+    what do you notice about the total margin between those elements? (see, margin collapse Link 👀--> https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+>>> HINT: Try using 'auto' as the left-right margin value if you want to center it 😉
+
+
+
+
+***** ADD IT UP! *****
+This is an easy one!
+>>> Open your browser's Inspect tool
+>>> Navigate to the Elements tab, then select one of your instruction elements
+>>> Scroll all the way to the bottom and notice the box model illustration
+>>> Add a single element's left-side pixels together, starting from the content out thru the border
+>>>>>>>>>>>DON'T ADD IN THE MARGIN!<<<<<<<<<<<<<
+
+
+
+>>> Type that number you added up somewhere and keep it in mind
+>>> Now, add --> box-sizing: border-box <-- to the CSS class selector
+>>> After re-rendering the page, add the left side back up, from content thru border
+>>> Notice the difference?
+
+🚨 BACK TO THE HTML! 🚨
+*/
+
+.recipe-piece{
+    margin: 5px;
+    background-color: lawngreen;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#recipe-container{
+
+
+    /*
+    >>> Which properties can you move from pb-instruction to here?
+    >>> Try to make sure you aren't repeating properties if not necessary!
+
+    🚨 BACK TO THE HTML! 🚨
+    */
+    /*height: 100px;*/
+    /*width: 200px;*/
+
+
+    margin: 0 auto;
+    height: fit-content;
+    width: 30%;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+article{
+    margin: 20px auto;
+}
+
+body {
+    background-color: black;
+    font-family: Helvetica, sans-serif;
+}
+
