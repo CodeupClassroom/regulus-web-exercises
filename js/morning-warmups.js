@@ -118,5 +118,17 @@
 
     console.log(filterForCanadians(wrestlers));
 
+    var circle = {
+        radius: 36
+    }
+
+    // Area of a circle = PI * radius^2
+
+    var area = Math.round(Math.PI * (Math.pow(circle.radius, 2)));
+
+    console.log(area);
+
+
+
 
 })();

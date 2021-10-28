@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Intro to Elements</title>
+    <link rel="stylesheet" href="css/selectors-properties.css">
 </head>
 <body>
 <header>
-  <h1>Gyarados</h1>
+  <h1 class="orange-bg pokemon-name">Gyarados</h1>
   <br>
     <nav>
         <a href="https://www.pokemon.com/us/pokedex/gyarados">Learn More About Gyarados!</a>
@@ -18,21 +19,41 @@
     <img src="img/130.png" alt="Picture of Gyarados">
 </section>
 <main>
+<!--Direct Child Demo-->
+    <div class="container">
+    <!--The container is the parent, and only the element with a card
+    class that is a direct child, gets that style applied-->
+        <div class="card">
+            <p class="description">It has an extremely aggressive nature. The Hyper Beam it shoots from its mouth totally incinerates all targets.</p>
+        </div>
+        <div>
+            <section>
+                <div class="card">
+                    <p>This text is inside the card.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>Hello there!</h1>
+    </div>
     <p>Number #: <span class="red-font"><strong>130</strong></span></p>
     <section id="type">
         <h2>Type</h2>
-        <ul>
+        <ul class="orange-bg type-list">
             <li>Water</li>
             <li>Flying</li>
         </ul>
     </section>
     <table>
-        <tr>
-            <th>Height</th>
-            <th>Category</th>
-            <th>Weight</th>
-            <th>Abilities</th>
-            <th>Gender</th>
+        <tr class="table-info">
+            <td>Height</td>
+            <td>Category</td>
+            <td>Weight</td>
+            <td>Abilities</td>
+            <td>Gender</td>
         </tr>
         <tr>
             <td>21' 04"</td>
@@ -43,9 +64,14 @@
         </tr>
     </table>
 </main>
+<div id="parent-div">
+    <h2>Am I a descendant of divs?</h2>
+</div>
+
     <!--Hyperlink to take me to section with the ID of type-->
   <footer>
-      <a href="#top">Back to Top</a>
+      <a href="#top" id="back-to-top">Back to Top</a>
   </footer>
+<h1 class="orange-bg underline">This is also red.</h1>
 </body>
 </html>
