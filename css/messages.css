@@ -1,0 +1,47 @@
+/*Bonus*/
+
+:root {
+    --bg-info: rgb(195, 218, 253);
+    --text-info: rgb(67, 70, 153);
+    --bg-success: #cff3da;
+    --text-success: #4f996c;
+    --bg-warning: #fcfbc9;
+    --text-warning: #978623;
+    --bg-error: #fad3d7;
+    --text-error: #9f455a;
+}
+
+/*Bonus*/
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px auto;
+    width: 80%;
+}
+/*Bonus Application*/
+.message-info {
+    background-color: var(--bg-info);
+    color: var(--text-info);
+}
+.message-success {
+    background-color: #cff3da;
+    color: #4f996c
+}
+.message-warning {
+    background-color: #fcfbc9;
+    color: #978623;
+}
+.message-error {
+    background-color: #fad3d7;
+    color: #9f455a;
+}
