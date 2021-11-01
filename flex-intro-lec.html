@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Basics Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Helvetica;
+            font-weight: bold;
+        }
+
+        .flex-container {
+            width: 80vw;
+            height: 30vh;
+            border: 3px solid darkmagenta;
+            margin: 10vh auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            /*align-content: center;*/
+        }
+
+        .flex-item {
+            background: #BFD45D;
+            border: 2px solid orangered;
+            padding: 1em;
+            /*flex-grow: 1;*/
+        }
+
+        .flex-item:nth-of-type(2) {
+            /*padding: 2em;*/
+            /*order: 1;*/
+            flex-grow: 3;
+        }
+
+        #the-weird-one {
+            /*padding: 2em;*/
+            background: lightskyblue;
+            flex-grow: 2;
+            /*order: -1;*/
+            /*align-self: flex-end;*/
+            /*margin: 0 0 0 auto;*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div class="flex-item">Flex Item 1</div>
+    <div class="flex-item">Flex Item 2</div>
+    <div class="flex-item">Flex Item 3</div>
+<!--    <div class="flex-item">Flex Item 4</div>-->
+<!--    <div class="flex-item">Flex Item 5</div>-->
+<!--    <div class="flex-item">Flex Item 6</div>-->
+<!--    <div class="flex-item">Flex Item 7</div>-->
+<!--    <div class="flex-item">Flex Item 8</div>-->
+<!--    <div class="flex-item">Flex Item 9</div>-->
+<!--    <div class="flex-item">Flex Item 10</div>-->
+<!--    <div class="flex-item">Flex Item 11</div>-->
+<!--    <div class="flex-item">Flex Item 12</div>-->
+<!--    <div class="flex-item">Flex Item 13</div>-->
+<!--    <div class="flex-item">Flex Item 14</div>-->
+<!--    <div class="flex-item">Flex Item 15</div>-->
+<!--    <div class="flex-item">Flex Item 16</div>-->
+<!--    <div class="flex-item">Flex Item 17</div>-->
+<!--    <div class="flex-item">Flex Item 18</div>-->
+<!--    <div class="flex-item">Flex Item 19</div>-->
+<!--    <div class="flex-item">Flex Item 20</div>-->
+    <div class="flex-item" id="the-weird-one">The Weird One</div>
+</div>
+
+</body>
+</html>
