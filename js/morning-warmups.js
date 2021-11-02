@@ -128,7 +128,44 @@
 
     console.log(area);
 
+//    Grocery Items
+    var groceries = [
+        {
+            name: "carrots",
+            quantity: 5
+        },{
+            name: "yams",
+            quantity: 50
+        },{
+            name: "oranges",
+            quantity: 9
+        },{
+            name: "onions",
+            quantity: 2
+        },{
+            name: "cucumbers",
+            quantity: 6
+        },{
+            name: "potatoes",
+            quantity: 8
+        }
+    ];
 
+    function getHighestQuantityObject(arr) {
+        var obj = {
+            name: "something",
+            quantity: 0
+        }
+        arr.forEach(function(el) {
+            if(el.quantity > obj.quantity) {
+                obj = el;
+            }
+            console.log(obj);
+        });
+        return obj;
+    }
+
+    console.log(getHighestQuantityObject(groceries));
 
 
 })();
