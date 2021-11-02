@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.flex-container {
+    display: flex;
+    height: 20vh;
+    width: 70vw;
+    margin: 10vh auto;
+    background: #989898;
+    border: 5px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item {
+    background: rebeccapurple;
+    color: antiquewhite;
+    padding: .5em;
+    width: 250px;
+    flex-basis: 500px;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background: orange;
+}
+
+nav {
+    background: #333;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-family: Verdana, sans-serif;
+    display: inline-block;
+    padding: 1em;
+}
+nav a:hover {
+    background: black;
+}
+
+nav ul li:nth-of-type(4) {
+    margin-left: auto;
+    /*flex-grow: 1;*/
+}
+
+#quick-example {
+    background: forestgreen;
+    display: flex;
+}
+
+#quick-example a:nth-of-type(2) {
+    margin-right: auto;
+    /*flex-grow: 1;*/
+}
+
+main, header {
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1em;
+    background: darkorange;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+}
+
+main h1, main h2, main h3 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+main h3 {
+    color: grey;
+}
+hr {
+    border-top: 1px solid whitesmoke;
+    width: 90px;
+}
+.card {
+    margin: .5em;
+    border-radius: 2px;
+    background: white;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.circle {
+    background: slateblue;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle h1 {
+    color: lightgray;
+    font-family: 'Audiowide', cursive;
+    font-size: 48px;
+}
+
+main i {
+    color: grey;
+}
+.text-section {
+    position: relative;
+    bottom: 1.5em;
+}
+.icons {
+    width: 160px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.icons i {
+    font-size: 2.2em;
+}
+
+footer {
+    background: black;
+    width: 100%;
+}
+.container {
+    min-width: 768px;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+footer h1 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: bolder;
+}
+h5 {
+    color: white;
+    font-weight: 200;
+    text-align: center;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+footer .icon-wrapper:hover,
+footer .top-footer a:hover {
+    color: black;
+    background: white;
+}
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+footer .container {
+    padding: 4em 0;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-wrapper {
+    border: 2px solid grey;
+    border-radius: 2.4em;
+    height: 2.4em;
+    width: 2.4em;
+    display: flex;
+}
+.icon-wrapper i {
+    margin: auto;
+}
+footer .bottom-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .top-footer a {
+    text-transform: uppercase;
+    font-weight: 200;
+}
+footer .bottom-footer a {
+    margin: .3em;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background: grey;
+}
+
+.logo-div {
+    flex-basis: 25%;
+    position: relative;
+    bottom: 5px;
+}
+
+.social-media-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
