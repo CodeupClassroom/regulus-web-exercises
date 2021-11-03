@@ -1,0 +1,24 @@
+/*MOBILE FIRST*/
+
+#small {
+    color: crimson;
+}
+
+#medium {
+    color: blue;
+}
+
+@media screen and (min-width:768px) {
+    #small {
+        color: green;
+    }
+    #medium {
+        color: darkorange;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        display: flex;
+    }
+}
