@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     /**
      * Write a function that returns the number 7
@@ -32,7 +32,7 @@
      * and for the multiples of five console.log “Buzz”. For numbers which are multiples of both three and five console.log “FizzBuzz”.
      */
 
-    for(var i = 1; i <= 100; i++) {
+    for (var i = 1; i <= 100; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
             console.log("FizzBuzz");
         } else if (i % 3 === 0) {
@@ -133,19 +133,19 @@
         {
             name: "carrots",
             quantity: 5
-        },{
+        }, {
             name: "yams",
             quantity: 50
-        },{
+        }, {
             name: "oranges",
             quantity: 9
-        },{
+        }, {
             name: "onions",
             quantity: 2
-        },{
+        }, {
             name: "cucumbers",
             quantity: 6
-        },{
+        }, {
             name: "potatoes",
             quantity: 8
         }
@@ -156,8 +156,8 @@
             name: "something",
             quantity: 0
         }
-        arr.forEach(function(el) {
-            if(el.quantity > obj.quantity) {
+        arr.forEach(function (el) {
+            if (el.quantity > obj.quantity) {
                 obj = el;
             }
             console.log(obj);
@@ -190,22 +190,75 @@
         }]
 
     function sortByName(arr) {
-        return arr.sort(function(a, b) {
+        return arr.sort(function (a, b) {
             var aLower = a.name.toLowerCase();
             var bLower = b.name.toLowerCase();
 
-            if(aLower < bLower) {
+            if (aLower < bLower) {
                 return -1;
-            } else if(aLower > bLower) {
+            } else if (aLower > bLower) {
                 return 1;
             } else {
                 return 0;
             }
         });
     }
+
     console.log(sortByName(products));
 
+//    Write a function in JavaScript that takes in an array of objects and returns the object with the lowest height property. Consider the following array to test your code.
 
+    var bBallPlayers = [
+        {
+            name: "Hakeem Olajuwon",
+            height: 213
+        }, {
+            name: "Muggsy Bogues",
+            height: 160
+        }, {
+            name: "Chris Paul",
+            height: 183
+        }, {
+            name: "Bol Bol",
+            height: 218
+        }, {
+            name: "Moochie Norris",
+            height: 185
+        }, {
+            name: "Manu Ginobili",
+            height: 198
+        }
+    ];
+
+    function findShortest(arr) {
+        var holdThis = {height: Number.MAX_VALUE};
+        arr.forEach(function (el) {
+            if (el.height < holdThis.height) {
+                holdThis = el;
+            }
+        });
+        return holdThis;
+    }
+
+    function findLowestHeight(arr) {
+        var bucket = [];
+        arr.forEach(function(el) {
+            bucket.push(parseInt(el.height));
+        });
+        console.log(bucket);
+        var shortest = Math.min(...bucket);
+        console.log(shortest);
+        var output;
+        arr.forEach(function(el) {
+            if (el.height === shortest) {
+                output = el;
+            }
+        });
+        return output;
+    }
+
+    console.log(findShortest(bBallPlayers));
+    console.log(findLowestHeight(bBallPlayers));
 
 
 })();
