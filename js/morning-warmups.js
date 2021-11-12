@@ -260,10 +260,42 @@
     console.log(findShortest(bBallPlayers));
     console.log(findLowestHeight(bBallPlayers));
 
+
     function randomEl(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
     console.log(randomEl(["rock", "paper", "scissors"]));
+
+    var myCharacter = {
+        name: 'Jayman',
+        hitPoints: 100,
+        class: 'Warrior',
+        abilities: {
+            attack: function(obj) {
+                console.log(myCharacter.name + " hit " + obj.name + " for " + myCharacter.weapon.damage + " damage!")
+                obj.hitPoints -= myCharacter.weapon.damage;
+                console.log(obj.name + " has " + obj.hitPoints + "  hit points left!")
+            },
+        },
+        magicPoints: 0,
+        weapon: {
+            name: 'Silver Sabre',
+            damage: 16,
+            type: 'sword'
+        }
+    }
+
+    var enemy = {
+        name: 'Savage Orc',
+        hitPoints: 100,
+        class: 'Warrior',
+        magicPoints: 0,
+    }
+
+    myCharacter.abilities.attack(enemy);
+    myCharacter.abilities.attack(enemy);
+    myCharacter.abilities.attack(enemy);
+    myCharacter.abilities.attack(enemy);
 
 })();
