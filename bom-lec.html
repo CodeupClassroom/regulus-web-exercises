@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+<h1>BOM Lecture</h1>
+
+<script>
+    // BOM is the browser object model
+
+
+    // var userResp = window.prompt("Give me something");
+    // window.alert(userResp);
+
+    // setTimeout(function () {
+    //     alert("hello!");
+    // }, 3000);
+    //
+    // setTimeout(function () {
+    //     var email = prompt("Give us your email for CRAZY discounts and more!");
+    //     alert(email);
+    // }, 5000);
+
+    // var intervalID = window.setInterval(function() {
+    //     console.log(intervalID);
+    //     var canGoToSplashmore = confirm("Will you take us to Mt. Splashmore?");
+    //     if (canGoToSplashmore) {
+    //         clearInterval(intervalID);
+    //     }
+    // }, 4000);
+
+    // var pokes = 0;
+    //
+    // var intervalID = window.setInterval(function() {
+    //     console.log(intervalID);
+    //     var stillThere = confirm("FROST BANK ALERT!\nYou've been idle for too long. Have you considered logging out? Click OK to continue banking.");
+    //     if (!stillThere) {
+    //         clearInterval(intervalID);
+    //         window.open("https://frostbank.com", "_newtab"); // opening a new tab to a set location.
+    //     } else {
+    //         pokes++;
+    //         if (pokes === 5) {
+    //             clearInterval(intervalID);
+    //             window.location = "https://frostbank.com/"; // https:// will link us to an external website
+    //         }
+    //     }
+    // }, 5000);
+
+    if (confirm("Will you take us to Mt. Splashmore?")) {
+        alert("Thanks Dad.")
+    } else {
+        window.location.reload();
+    }
+
+</script>
+</body>
+</html>

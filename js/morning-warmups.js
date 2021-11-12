@@ -260,5 +260,10 @@
     console.log(findShortest(bBallPlayers));
     console.log(findLowestHeight(bBallPlayers));
 
+    function randomEl(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    console.log(randomEl(["rock", "paper", "scissors"]));
 
 })();
