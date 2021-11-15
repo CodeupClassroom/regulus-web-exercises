@@ -260,6 +260,13 @@
     console.log(findShortest(bBallPlayers));
     console.log(findLowestHeight(bBallPlayers));
 
+
+    function randomEl(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    console.log(randomEl(["rock", "paper", "scissors"]));
+
     var myCharacter = {
         name: 'Jayman',
         hitPoints: 100,
@@ -290,6 +297,5 @@
     myCharacter.abilities.attack(enemy);
     myCharacter.abilities.attack(enemy);
     myCharacter.abilities.attack(enemy);
-
 
 })();
