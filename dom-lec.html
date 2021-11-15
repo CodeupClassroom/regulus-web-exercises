@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Object Model Lesson</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style>
+        .dom {
+            background-image: url("img/the-dom.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="dom col"></div>
+    <div class="col">
+        <h1 id="mainTitle" class="text-center">The DOM</h1>
+        <hr class="w-100">
+        <div class="row">
+            <div class="col">
+
+                <h3 class="headers">Things That Are Important:</h3>
+                <ol>
+                    <li id="super-important">Family</li>
+                    <li>Action</li>
+                    <li>Speed</li>
+                    <li>Cars</li>
+                    <li>Fury</li>
+                </ol>
+            </div>
+            <div class="col">
+                <h3 class="headers">Movies</h3>
+                <ul>
+                    <li>The Fast and the Furious</li>
+                    <li>2 Fast 2 Furious</li>
+                    <li>The Fast and the Furious: Tokyo Drift</li>
+                    <li>Fast & Furious</li>
+                    <li>Fast Five</li>
+                    <li>Fast & Furious 6</li>
+                    <li>Furious 7</li>
+                    <li>The Fate of the Furious</li>
+                    <li id="spin-off">Fast & Furious Presents: Hobbs & Shaw</li>
+                    <li id="unreleased">F9</li>
+                </ul>
+            </div>
+        </div>
+        <h3 class="headers">My Ride</h3>
+        <div class="image-container d-flex justify-content-center align-items-center">
+            <img id="car-image" src="img/old-car.jpg" alt="Old beat up car">
+        </div>
+    </div>
+</div>
+<form name="fastSurvey" method="get">
+    <label for="answer">What is your favorite movie?</label>
+    <input type="text" name="answer" id="answer">
+</form>
+
+<ul id="nationalParksList">
+
+</ul>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+<script>
+// Write your code here!
+
+// Returns the element with its content.
+var family = document.getElementById('super-important');
+
+var titles = document.getElementsByClassName('headers');
+
+var listItems = document.getElementsByTagName('li');
+
+var firstHeader = document.querySelector('.headers');
+
+var allHeaders = document.querySelectorAll('.headers')
+
+var carImage = document.querySelector('#car-image');
+
+var answer = document.forms.fastSurvey.answer.value;
+
+var mainTitle = document.querySelector('#mainTitle');
+
+
+var nationalParks = [
+    {name: 'Grand Canyone National Park'},
+    {name: 'Rocky Mountain National Park'},
+    {name: 'White Sands National Park'}
+]
+
+var parksList = document.querySelector('#nationalParksList');
+
+console.log(titles);
+console.log(listItems);
+console.log(allHeaders);
+
+// A forEach loop will not work because we are using an
+// HTMLCollection prototype, rather than an Array prototype.
+// titles.forEach(function(header){
+//     header.style = 'font-family: Impact, sans-serif;';
+// });
+
+// Let's change the font-family of each h3 element that has the class
+// of 'headers' to be Impact. Since we have a collection of elements,
+// we must use a loop to iterate through the HTML nodes, and change the style attribute.
+for (var i = 0; i < titles.length; i++) {
+    console.log("It's working!");
+    titles[i].style = 'font-family: Impact, sans-serif';
+}
+
+carImage.setAttribute('src', 'img/actual-car.jpg');
+// The innerHTML property allows us to change the text content of the element, as well as add additional HTML elements.
+mainTitle.innerHTML = 'The <b>DOM</b> Lecture';
+// The innerText property allows us to only change the text content of an element.
+mainTitle.innerText = 'Hello World';
+// We can concatenate variables into our strings. So here, we are accessing our array of national park objects,
+// and concatenating in the name property of the object.
+parksList.innerHTML = "<li>" + nationalParks[0].name +"</li><li>"+nationalParks[1].name +"</li><li>"+ nationalParks[2].name +"</li>"
+
+// family.style = 'background-color: yellow; color: red; font-weight: bolder;';
+
+var colorChangingBG = setInterval(function(){
+
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    document.querySelector('body').style.backgroundColor = randomColor;
+
+}, 2000)
+
+
+</script>
+</body>
+</html>
