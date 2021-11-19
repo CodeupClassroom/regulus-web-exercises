@@ -50,69 +50,114 @@
         <option value="Food & Water">Food & Water</option>
     </select>
 </section>
+<small id="dbl-size">Click this element to double it's font size!</small>
 <div class="ml-5" id="little-list">
     <h2 class="result"></h2>
     <img src="img/goku-normal.png" id="goku">
     <button class="goku-chill">Goku Chill!</button>
 </div>
 <img src="img/space-bar.png" alt="simple bar" class="space-bar">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
-  var moonText = document.querySelector('#moon-travel');
-  var mainContent = document.querySelector('#main-content');
+    $(document).ready(function(){
+        // OLD VANILLA JS WAY
+        // var moonText = document.querySelector('#moon-travel');
+        // var mainContent = document.querySelector('#main-content');
+
+        // NEW, COOL JQUERY WAY
+
+        var moonText = $('#moon-travel');
+        var mainContent = $('#main-content');
 
 
-  // CLICK EVENT: When I click on the h1 text, the background will change, as well as the text of the element.
-  moonText.addEventListener('click', function() {
-    mainContent.style.backgroundImage = 'url(img/moon-surface.png)';
-    this.innerHTML = 'Do I have to wear a mask on the moon?';
-  });
+        // OLD VANILLA JS CLICK EVENT
+        // CLICK EVENT: When I click on the h1 text, the background will change, as well as the text of the element.
+        // moonText.addEventListener('click', function() {
+        //   mainContent.style.backgroundImage = 'url(img/moon-surface.png)';
+        //   this.innerHTML = 'Do I have to wear a mask on the moon?';
+        // });
 
-  // MOUSE EVENT
-  var goku = document.querySelector('#goku');
+        // NEW COOL JQUERY CLICK EVENT
 
-  var gokuListener = function() {
-    // goku.setAttribute('src', 'img/goku-mad.png')
-    this.src = 'img/goku-mad.png';
-    this.addEventListener('mouseout', function() {
-      this.src = 'img/goku-normal.png';
+        moonText.click(function(event) {
+            console.log(event);
+            mainContent.css('background-image', 'url(img/moon-surface.png)');
+            moonText.html('Do I have to wear a mask on the moon?');
+
+            // We can access the innerHTML and style properties using the event object that is being passed through our callback function.
+            // event.target.innerHTML = 'Do I have to wear a mask on the moon?'
+        })
+
+        // DBL-CLICK EVENT IN JQUERY
+
+        var smallText = $('#dbl-size');
+
+        smallText.dblclick(function(e){
+            var currentSize = parseFloat($(this).css('font-size'));
+            console.log(currentSize);
+            var doubleSize = currentSize * 2;
+            $(this).css('font-size', doubleSize + "px");
+        });
+
+
+
+
+        // MOUSE EVENT
+    //     var goku = document.querySelector('#goku');
+        var goku = $('#goku');
+    //
+    //     var gokuListener = function() {
+    //         // goku.setAttribute('src', 'img/goku-mad.png')
+    //         this.src = 'img/goku-mad.png';
+    //         this.addEventListener('mouseout', function() {
+    //             this.src = 'img/goku-normal.png';
+    //         })
+    //     }
+    //
+    //     goku.addEventListener('mouseenter', gokuListener);
+
+        goku.hover(function() {
+            this.src = 'img/goku-mad.png'
+        }, function() {
+            this.src = 'img/goku-normal.png'
+        })
+
+    //
+    //     var gokuChill = function(e) {
+    //         console.log(e)
+    //         goku.removeEventListener('mouseenter', gokuListener);
+    //     }
+    //
+    //     document.querySelector('.goku-chill').addEventListener('click', gokuChill);
+    //
+    //     // KEYBOARD EVENTS: keyup, keydown, keypress
+    //     mainContent.addEventListener('keydown', function(){
+    //         console.log(event.keyCode);
+    //         if(event.key === " ") {
+    //             document.querySelector('.space-bar').style.display = 'inline';
+    //         }
+    //     });
+    //
+    //     // CHANGE EVENT
+    //     var dropdown = document.querySelector('#travel-items');
+    //
+    //     dropdown.addEventListener('change', function(event){
+    //         // console.log(event.target);
+    //         // template string syntax ${javascript code goes in here}
+    //         document.querySelector('.result').innerHTML = `I agree that ${event.target.value} is important!`
+    //     });
+    //
+    //     // MINI EXERCISE
+    //     // When the user clicks on the Change Font Color button, the font of the entire webpage should change to the users input.
+    //
+    //     var colorBtn = document.querySelector('#color-btn');
+    //
+    //     colorBtn.addEventListener('click', function() {
+    //
+    //         mainContent.style.color = document.querySelector('#text-color').value;
+    //     })
     })
-  }
 
-  goku.addEventListener('mouseenter', gokuListener);
-
-  var gokuChill = function(e) {
-      console.log(e)
-    goku.removeEventListener('mouseenter', gokuListener);
-  }
-
-  document.querySelector('.goku-chill').addEventListener('click', gokuChill);
-
-  // KEYBOARD EVENTS: keyup, keydown, keypress
-  mainContent.addEventListener('keydown', function(){
-    console.log(event.keyCode);
-    if(event.key === " ") {
-      document.querySelector('.space-bar').style.display = 'inline';
-    }
-  });
-
-  // CHANGE EVENT
-  var dropdown = document.querySelector('#travel-items');
-
-  dropdown.addEventListener('change', function(event){
-    // console.log(event.target);
-    // template string syntax ${javascript code goes in here}
-    document.querySelector('.result').innerHTML = `I agree that ${event.target.value} is important!`
-  });
-
-  // MINI EXERCISE
-  // When the user clicks on the Change Font Color button, the font of the entire webpage should change to the users input.
-
-  var colorBtn = document.querySelector('#color-btn');
-
-  colorBtn.addEventListener('click', function() {
-
-    mainContent.style.color = document.querySelector('#text-color').value;
-  })
 </script>
 </body>
 </html>
