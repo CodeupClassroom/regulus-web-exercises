@@ -17,28 +17,31 @@ $(document).ready(function() {
     //
     // var mainTitle = document.querySelector('#mainTitle');
 
+// jQuery Selectors
 
+    // ID
     var family = $('#super-important');
-
+    // CLASS
     var titles = $('.headers');
-
+    // ELEMENT
     var listItems = $('li');
 
     var carImage = $('#car-image');
 
     var mainTitle = $('#mainTitle');
-
+    // COMBINED
     var mainHeader = $('h1.headers');
-
+    // Similar to innerHTML, will change the content of the selected element
     mainHeader.html('Hello There!');
-
+    // Similar to the style property, will accept two string parameters, or an object like below.
     mainHeader.css({
         'color': 'white',
         'background-color': 'black'
     });
-
+    // ALL SELECTOR
     // $('*').css('border', 'solid 1px black');
 
+    // MULTIPLE
     $('h1, p, ol').css('font-family', 'Georgia, serif');
 
 
