@@ -8,6 +8,12 @@
 <h1 id="santa-greeting" class="title">Ho ho ho! Merry Christmas! - Santa Claus</h1>
 <p id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa enim id tempora tenetur! Facilis nobis porro quos
     sed sint.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa enim id tempora tenetur! Facilis nobis porro quos
+    sed sint.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa enim id tempora tenetur! Facilis nobis porro quos
+    sed sint.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa enim id tempora tenetur! Facilis nobis porro quos
+    sed sint.</p>
 <div id="christmasList">
     <ul>
         <li class="codeup">Playstation 5</li>
@@ -23,7 +29,26 @@
 <h1>Happy Christmas Ron!</h1>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
-    console.log($('h1, p, li'));
+    // console.log($('h1, p, li'));
+
+    // Mouse Events
+
+    $('h1').click(function() {
+        $(this).css('background-color', 'purple');
+    })
+
+    $('p').dblclick(function() {
+        $(this).css('font-size', '18px');
+    })
+
+    $('li').hover(function() {
+        $(this).css('color', 'red');
+    }, function() {
+        $(this).css('color', 'black');
+    })
+
+
+
 </script>
 </body>
 </html>

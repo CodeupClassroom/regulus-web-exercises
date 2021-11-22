@@ -27,7 +27,6 @@
             right: 0;
             bottom: 150px;
         }
-
     </style>
 </head>
 <body id="main-content">
@@ -120,6 +119,7 @@
             this.src = 'img/goku-mad.png'
         }, function() {
             this.src = 'img/goku-normal.png'
+            console.log('The mouse has left the content area.')
         })
 
     //
@@ -129,14 +129,63 @@
     //     }
     //
     //     document.querySelector('.goku-chill').addEventListener('click', gokuChill);
-    //
+
+        // TURN OFF MOUSEENTER EVENT IN JQUERY
+
+        $('.goku-chill').click(function(){
+          goku.off();
+        });
+
+
+        // -----------
+
+
     //     // KEYBOARD EVENTS: keyup, keydown, keypress
+
+        // OLD VANILLA JS WAY
     //     mainContent.addEventListener('keydown', function(){
     //         console.log(event.keyCode);
     //         if(event.key === " ") {
     //             document.querySelector('.space-bar').style.display = 'inline';
     //         }
     //     });
+
+        // NEW COOL JQUERY WAY
+
+        var spaceBar = $('.space-bar');
+
+        // mainContent.keydown(function(e) {
+        //     console.log(e.key)
+        //     if(e.keyCode === 32) {
+        //         spaceBar.css('display', 'inline');
+        //     }
+        // });
+
+        mainContent.on('keyup', function(e) {
+            if(e.keyCode === 32) {
+                spaceBar.css('display', 'inline');
+            }
+        });
+
+
+
+
+        mainContent.keypress(function(e) {
+            var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            if(e.key === 'p') {
+                mainContent.css({
+                    'background-image': 'none',
+                    'background-color':  randomColor
+                })
+            }
+
+        });
+
+
+        // -----------
+
+
     //
     //     // CHANGE EVENT
     //     var dropdown = document.querySelector('#travel-items');
