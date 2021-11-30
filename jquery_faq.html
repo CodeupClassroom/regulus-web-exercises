@@ -6,7 +6,6 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: 'Fira Code', monospace;
             line-height: 1.5em;
         }
 
@@ -98,6 +97,33 @@
 
 <button class="styler" id="btn-1">Click to change some things!</button>
 <hr>
+<h1>National Parks of Iceland</h1>
+<h3>Snæfellsjökull</h3>
+<ul>
+    <li>Stratovolcano</li>
+    <li>Sometimes it may be seen from the city of Reykjavík over Faxa Bay, at a distance of 120 km.</li>
+    <li>The mountain is one of the most famous sites of Iceland, primarily due to the novel Journey to the Center of the Earth (1864) by Jules Verne, in which the protagonists find the entrance to a passage leading to the center of the earth on Snæfellsjökull.</li>
+    <li>In August 2012 the summit was ice-free for the first time in recorded history.</li>
+</ul>
+
+<h3>Vatnajökull</h3>
+<ul>
+    <li>Vatnajökull National Park is divided into four territories.</li>
+    <li>Vatnajökull is Europe's largest glacier outside the arctic, with a surface area of 8,100 km2.</li>
+    <li>It encompasses all of Vatnajökull glacier and extensive surrounding areas. These include the national parks previously existing at Skaftafell in the southwest and Jökulsárgljúfur in the north.</li>
+    <li>On 5 July 2019, Vatnajökull National Park was inscribed as a World Heritage Site.</li>
+</ul>
+
+<h3>Þingvellir</h3>
+<ul>
+    <li>The National Gallery of Iceland owns more than 150 paintings by Ásgrímur Jónsson that have Þingvellir as their subject.</li>
+    <li>The name Þingvellir is derived from the Old Norse Þingvǫllr, from þing (“thing, assembly”) and vǫllr (“field”), meaning assembly fields.</li>
+    <li>Þingvellir is associated with the Althing, the national parliament of Iceland, which was established at the site in 930 AD.</li>
+    <li>Þingvellir was designated as a World Heritage Site in 2004.</li>
+</ul>
+
+<button class="styler" id="btn-2">Click me to highlight last list item</button>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -112,6 +138,21 @@
         $("dt").click(function() {
             $(this).toggleClass("highlighter");
         });
+
+        $("#btn-2").click(function() {
+            $("ul").each(function() {
+                $(this).children().last().css("background", "yellow");
+            });
+        });
+
+        $("h3").click(function() {
+            $(this).next().children().toggleClass("emboldened");
+        });
+
+        $("li").click(function() {
+            $(this).parent().children().first().toggleClass("enbluened");
+        });
+
     });
 </script>
 

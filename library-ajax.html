@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+    <div id="books"></div>
+
+    <input type="text" id="title">
+    <input type="text" id="author">
+    <input type="submit" id="submit-btn">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $.get("/data/library.json").done(function (books) {
+            $("#books").html("");
+            books.forEach(function(book) {
+                var h1 = "<h1>" + book.title + "</h1>";
+                var p = "<p>By: " + book.author + "</p>"
+                $("#books").append(h1 + p);
+            });
+        });
+
+    </script>
+</body>
+</html>
