@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Essential Methods</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Fira Code', monospace;
+            line-height: 1.5em;
+        }
+
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlighter {
+            background: #ef0;
+        }
+
+        .emboldened {
+            font-weight: bold;
+        }
+
+        .enbluened {
+            color: #373fff;
+        }
+
+        body {
+            font-size: 1.25em;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin-bottom: 1.2em;
+        }
+
+        .styler {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: 1s;
+            font-size: 1em;
+            border-radius: 5px;
+            background-color: #3B94D9;
+            border: #30447B solid 5px;
+            color: aliceblue;
+            padding: 10px;
+            box-shadow: 5px 5px 10px black;
+        }
+
+        .styler:hover {
+            background-color: brown;
+            color: blanchedalmond;
+            border-color: orangered;
+            box-shadow: 0 0 5px black;
+            top: 5px;
+            left: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Multi-purpose Stadiums in the United States</h1>
+<dl>
+    <dt>Bud and Jackie Sellick Bowl</dt>
+    <dd class="invisible">Located in Indianapolis, IN</dd>
+
+    <dt>Don Shula Stadium</dt>
+    <dd class="invisible">Located in University Park, OH</dd>
+
+    <dt>Ernest W. Spangler Stadium</dt>
+    <dd class="invisible">Located in Boiling Springs, NC</dd>
+
+    <dt>J. Lawrence Walkup Skydome</dt>
+    <dd class="invisible">Located in Flagstaff, AZ</dd>
+
+    <dt>Lake Myrtle Sports Complex</dt>
+    <dd class="invisible">Located in Auburndale, FL</dd>
+
+    <dt>Oakland–Alameda County Coliseum,</dt>
+    <dd class="invisible">Located in Oakland, CA</dd>
+
+    <dt>Pine Bowl</dt>
+    <dd class="invisible">Located in Loretto, PA</dd>
+
+    <dt>Rice–Totten Stadium</dt>
+    <dd class="invisible">Located in Itta Bena, Mississippi</dd>
+
+    <dt>Saluki Stadium</dt>
+    <dd class="invisible">Located in Carbondale, IL</dd>
+
+    <dt>Welcome Stadium</dt>
+    <dd class="invisible">Located in Dayton, OH</dd>
+</dl>
+
+<button class="styler" id="btn-1">Click to change some things!</button>
+<hr>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+
+
+        $("#btn-1").click(function() {
+            $("dd").toggleClass("invisible");
+        });
+
+        $("dt").click(function() {
+            $(this).toggleClass("highlighter");
+        });
+    });
+</script>
+
+</body>
+</html>
