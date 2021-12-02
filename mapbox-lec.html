@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Lecture</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<h1>Welcome to Mapbox!</h1>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4683, 29.5312], // starting position [lng, lat]
+        zoom: 8 // starting zoom
+    });
+
+    // MARKERS
+
+    // Instantiate a new Marker object.
+    var codeup = new mapboxgl.Marker({
+        color: "blue",
+    })
+        .setLngLat([-98.48615, 29.426827]).setDraggable(true)
+
+    // adding our newly instantiated Marker object to the
+    // Map object for rendering
+    codeup.addTo(map)
+    // must use the ".on" method to recognize mapbox events. Below we are
+    // listening for a 'dragend' event.
+    codeup.on('dragend', function() {
+        popup.setLngLat(codeup.getLngLat())
+    })
+
+    // POPUPS
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(codeup.getLngLat())
+        .setHTML('<h3 style="color: green">Hello From Codeup!</h3>')
+        .addTo(map)
+
+    var mysteryPlace = new mapboxgl.Marker()
+    .setLngLat([-96.79, 32.77])
+    .addTo(map)
+
+
+          reverseGeocode({lat: 32.77, lng: -96.79}, MAPBOX_KEY).then(function(results) {
+              console.log(results)
+          })
+</script>
+</body>
+</html>
