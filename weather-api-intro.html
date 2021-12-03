@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Open Weather Map</title>
+</head>
+<body>
+    <h1>Open your console</h1>
+    <img id="weather_icon" src="" alt="weather icon">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/keys.js"></script>
+    <script>
+        // $.get("https://api.openweathermap.org/data/2.5/onecall?lat=29.7604&lon=-95.3698&exclude=minutely,hourly&units=imperial&appid=" + OPEN_WEATHER_KEY).done(function(data) {
+        //     console.log(data);
+        // });
+
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
+            lat: 29.7604,
+            lon: -95.3698,
+            exclude: "minutely,hourly",
+            units: "imperial",
+            APPID: OPEN_WEATHER_KEY
+        }).done(function(data) {
+            console.log(data);
+            $("#weather_icon").attr("src", "http://openweathermap.org/img/w/" + data.daily[0].weather[0].icon + ".png");
+            console.log(new Date(data.daily[0].dt * 1000));
+        });
+    </script>
+</body>
+</html>
