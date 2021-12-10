@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful API Requests</title>
+</head>
+<body>
+<h1>RESTful API Requests</h1>
+<script>
+  const API_URL = 'https://acoustic-little-chive.glitch.me/minerals';
+
+  // GET REQUEST
+
+  let getAllMinerals = () => {
+      return fetch(API_URL).then(resp => resp.json()).catch(err => console.error(err));
+  }
+
+  getAllMinerals().then(data => console.log(data));
+
+  // GET REQUEST BY ID
+  let getMineralById = (id) => {
+      return fetch(`${API_URL}/${id}`).then(resp => resp.json()).catch(err => console.error(err))
+  }
+
+  // SHOULD RETURN GYPSUM
+    getMineralById(3).then(data => console.log(data));
+
+  // EDIT A POST
+  // PUT VS PATCH
+  // PUT - requires you to resubmit the entire entity.
+  // PATCH - only edits properties that currently exist in the posted entity.
+
+  let editMineral = (mineral) => {
+      let options = {
+          method: 'PUT',
+          headers: {
+              // Content-Type - This tells the server what type of data we are sending with our request. When interacting with a JSN API, this will usually be application/json.
+              'Content-Type': 'application/json',
+          },
+          // A request body - Additional content that is included along with our request, usually a JSON string that represents the resource(s) being created/modified.
+          body: JSON.stringify(mineral) // Convert the JS object into a JSON string before sending it to the server.
+      }
+
+      return fetch(`${API_URL}/${mineral.id}`, options).then(resp => resp.json()).catch(err => console.error(err));
+  }
+
+  // If you use the PUT method, and only send an object with 2 of the existing properties, the entire object gets replaced, leaving you with only the properties you passed.
+
+  let editedMineral = {
+      name: 'olivine',
+      color: 'yellow green',
+      hardness: 7,
+      cleavage: 'brittle',
+      luster: 'vitreous',
+      id: 5
+  }
+
+  // editMineral(editedMineral).then(data => console.log(data));
+
+
+  // POST REQUEST
+
+  let regulusRock = {
+      name: 'regulus',
+      color: 'blue',
+      hardness: '10',
+      cleavage: 'conchoidal',
+      luster: 'metallic',
+      id: 6,
+  }
+
+
+  let createMineral = (mineral) => {
+      let options = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(mineral)
+      }
+      return fetch(API_URL, options).then(resp => resp.json()).catch(err => console.error(err));
+  }
+
+  // createMineral(regulusRock).then(data => console.log(data));
+
+  // DELETE REQUEST
+
+  let deleteMineral = (id) => {
+      let options = {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      }
+      return fetch(`${API_URL}/${id}`, options).then(resp => resp.json()).catch(err => console.error(err))
+  }
+
+
+  deleteMineral(3);
+
+</script>
+</body>
+</html>
